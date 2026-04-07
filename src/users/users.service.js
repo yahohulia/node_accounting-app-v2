@@ -22,20 +22,6 @@ function createUser(name) {
   return user;
 }
 
-function deleteById(id) {
-  const index = users.findIndex(
-    (userToDelete) => userToDelete.id === Number(id),
-  );
-
-  if (index === -1) {
-    return;
-  }
-
-  const [user] = users.splice(index, 1);
-
-  return user;
-}
-
 function updateUser({ id, name }) {
   const user = users.find((userToUpdate) => userToUpdate.id === Number(id));
 
@@ -46,6 +32,20 @@ function updateUser({ id, name }) {
   if (name !== undefined) {
     user.name = name;
   }
+
+  return user;
+}
+
+function deleteById(id) {
+  const index = users.findIndex(
+    (userToDelete) => userToDelete.id === Number(id),
+  );
+
+  if (index === -1) {
+    return;
+  }
+
+  const [user] = users.splice(index, 1);
 
   return user;
 }

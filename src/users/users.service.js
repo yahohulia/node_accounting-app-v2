@@ -43,7 +43,11 @@ function updateUser({ id, name }) {
     return;
   }
 
-  return Object.assign(user, { name });
+  if (name !== undefined) {
+    user.name = name;
+  }
+
+  return user;
 }
 
 module.exports = {

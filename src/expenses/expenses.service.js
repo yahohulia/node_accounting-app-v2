@@ -15,7 +15,7 @@ function getById(id) {
 }
 
 function createExpense(userId, spentAt, title, amount, category, note) {
-  const user = {
+  const expense = {
     id: nextId++,
     userId,
     spentAt,
@@ -25,9 +25,9 @@ function createExpense(userId, spentAt, title, amount, category, note) {
     note,
   };
 
-  expenses.push(user);
+  expenses.push(expense);
 
-  return user;
+  return expense;
 }
 
 function deleteById(id) {
